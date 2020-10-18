@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
 class ArticlesController < ApplicationController
+  include Pagy::Backend
+
   before_action :set_article, only: %i[edit update show destroy]
+
+  
   def index
-    @articles = Article.paginate(page: params[:page], per_page: 5)
+   @pagy, @articles = pagy(Article.all, items: 3)
   end
 
   def new
@@ -44,7 +48,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :description)
+    params.require(:article).permit(:title, :description, :user_id)
   end
 
   def set_article

@@ -19,9 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
 gem 'bootstrap-sass', '~> 3.4.1'
 
-gem 'bootstrap-will_paginate', '1.0.0'
-
-gem 'will_paginate', '~> 3.1.5'
+gem 'pagy'
 
 gem 'jquery-rails'
 

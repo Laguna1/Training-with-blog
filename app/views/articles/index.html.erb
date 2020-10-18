@@ -5,8 +5,10 @@
 </head>
 <body>
 	<h1 align="center">All Articles</h1> 
+    	<%== pagy_nav(@pagy) %> 
 	
 	<%= render 'article', obj: @articles %>
 
+        
 </body>
 </html>
