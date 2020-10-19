@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   include Pagy::Backend
 
   before_action :set_article, only: %i[edit update show destroy]
-
+  before_action :require_user, except: [:index, :show]
   
   def index
    @pagy, @articles = pagy(Article.all, items: 3)
@@ -25,7 +25,9 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @pagy, @user_articles = pagy(@user.articles, items: 2)
+  end
 
   def update
     if @article.update(article_params)
