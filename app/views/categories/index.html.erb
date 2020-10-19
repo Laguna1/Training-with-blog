@@ -2,6 +2,7 @@
 <h1 align="center">Listing All Categories</h1>
 
 <div align="center">
+<%== pagy_nav(@pagy) %> 
 	<% @categories.each do |category| %>
 		<ul class="listing">
 			<div class="row">
@@ -13,4 +14,5 @@
 			</div>
 		</ul>
 	<% end %>
+	<%== pagy_nav(@pagy) %> 
 </div>

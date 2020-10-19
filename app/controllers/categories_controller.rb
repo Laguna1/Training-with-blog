@@ -1,6 +1,11 @@
 class CategoriesController < ApplicationController
+	include Pagy::Backend
+	
     def index
-		@categories = Category.all
+        @categories = Category.all
+        @pagy, @categories = pagy(Category.all, items: 3)
+
+        
 	end
 
 	def new
