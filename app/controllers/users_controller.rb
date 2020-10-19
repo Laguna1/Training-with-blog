@@ -3,8 +3,8 @@
 class UsersController < ApplicationController
   include Pagy::Backend
 
-  before_action :set_user, only: [:edit, :update, :show]
-  before_action :require_same_user, only: [:edit, :update]
+  before_action :set_user, only: %i[edit update show]
+  before_action :require_same_user, only: %i[edit update]
 
   def new
     @user = User.new
@@ -39,25 +39,25 @@ class UsersController < ApplicationController
   end
 
   def destroy
-   @user.destroy
+    @user.destroy
     flash[:danger] = "User and all User's articles have been deleted"
     redirect_to users_path
   end
-  
+
   def set_user
-		@user = User.find(params[:id])
-	end
+    @user = User.find(params[:id])
+  end
+
   private
-  
 
   def user_params
     params.require(:user).permit(:username, :email, :password)
   end
 
   def require_same_user
-		if current_user != @user
-			flash[:danger] = "You can only edit your own account"
-			redirect_to root_path
-		end
-	end
+    if current_user != @user
+      flash[:danger] = 'You can only edit your own account'
+      redirect_to root_path
+    end
+  end
 end
