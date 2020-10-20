@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
   include Pagy::Backend
 
   def index
-   @pagy, @categories = pagy(Category.all, items: 5)
+    @pagy, @categories = pagy(Category.all, items: 5)
   end
 
   def new
@@ -25,7 +25,7 @@ class CategoriesController < ApplicationController
 
   def update
     if @category.update(category_params)
-      flash[:success] = "Category name was successfully updated"
+      flash[:success] = 'Category name was successfully updated'
       redirect_to category_path(@category)
     else
       render 'edit'
