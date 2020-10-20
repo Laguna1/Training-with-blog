@@ -3,6 +3,11 @@ $navbar-default-bg: black;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  background-image: image-url('studio.jpg'); 
+  background-size: cover; // link to /assets/images/pexels.jpg
+}
+
 #logo {
  float: left;
  font-size: 1.7em;
