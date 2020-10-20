@@ -2,12 +2,14 @@
 <html>
 <head>
 	<title>All Articles</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
 	<h1 align="center">All Articles</h1> 
-	<div class="text-center"> <%== pagy_nav(@pagy) %> </div>
+	<div class="text-center"> 
+    	<%== pagy_nav(@pagy) %> 
+	</div>
    <%= render 'article', obj: @articles %>
-
-        
+      
 </body>
 </html>

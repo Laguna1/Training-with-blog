@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class CategoryTest < ActiveSupport::TestCase
-   # method runs before all tests
+  # method runs before all tests
   def setup
     @category = Category.new(name: 'sports')
   end

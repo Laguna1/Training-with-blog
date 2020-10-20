@@ -48,6 +48,17 @@ body {
  margin-top: 15px;
 }
 
+.badge {
+	background-color: #0ff135;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	font-weight: bold;
+}
+
+.input-checkbox {
+	width: auto !important;
+}
+
 .description {
  margin-top: 0;
 }
