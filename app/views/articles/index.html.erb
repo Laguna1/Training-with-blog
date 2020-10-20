@@ -5,7 +5,7 @@
 </head>
 <body>
 	<h1 align="center">All Articles</h1> 
-	
+	<div class="text-center"> <%== pagy_nav(@pagy) %> </div>
    <%= render 'article', obj: @articles %>
 
         
