@@ -3,6 +3,11 @@ $navbar-default-bg: black;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  background-image: image-url('studio.jpg'); 
+  background-size: cover; // link to /assets/images/pexels.jpg
+}
+
 #logo {
  float: left;
  font-size: 1.7em;
@@ -15,6 +20,11 @@ $navbar-default-bg: black;
 #logo:hover {
  color: #fff;
  text-decoration: none;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: whitesmoke;
+  font-weight: lighter;
 }
 
 .article-actions {
@@ -38,6 +48,17 @@ $navbar-default-bg: black;
  margin-top: 15px;
 }
 
+.badge {
+	background-color: #0ff135;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	font-weight: bold;
+}
+
+.input-checkbox {
+	width: auto !important;
+}
+
 .description {
  margin-top: 0;
 }
@@ -56,4 +77,9 @@ $navbar-default-bg: black;
   bottom: 0;
   margin-left: auto;
   margin-right: auto;
+}
+
+.well-lg {
+  border-radius: 5%;
+   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); 
 }
